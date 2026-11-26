@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f8f6" />
+    <meta
+      name="description"
+      content="Přehledný průvodce algoritmizací a zpracováním textu: vlastnosti algoritmů, vývojové diagramy a procvičování na školní test."
+    />
+    <meta property="og:title" content="Algoritmizace — zpracování textu" />
+    <meta
+      property="og:description"
+      content="Všechno důležité o algoritmech na jednom místě. Srozumitelně, názorně a interaktivně."
+    />
+    <title>Algoritmizace — zpracování textu | Učivo přehledně</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#hlavni-obsah">Přeskočit na obsah</a>
+    <header class="site-header" id="nahoru">
+      <a class="brand" href="#uvod" aria-label="Algoritmus — úvodní stránka">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>algoritmus<span class="brand-dot">.</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Otevřít navigaci" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+      <nav class="main-nav" aria-label="Hlavní navigace">
+        <a href="#zaklady">Základy</a>
+        <a href="#zapisy">Zápisy</a>
+        <a href="#diagramy">Diagramy</a>
+        <a href="#cviceni">Procvičování</a>
+        <a href="#test">Test nanečisto</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Přepnout na tmavý režim" title="Přepnout motiv">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"></path></svg>
+        <span class="theme-label">Tmavý režim</span>
+      </button>
+    </header>
+
+    <main id="hlavni-obsah">
+      <section class="hero section-wrap" id="uvod">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="status-dot"></span> PRŮVODCE UČIVEM <span class="eyebrow-divider">/</span> INFORMATIKA</div>
+          <h1>Dobré řešení<br />začíná <span class="title-highlight">dobrým postupem.</span></h1>
+          <p class="hero-lead">Nauč se přemýšlet jako algoritmus. Srozumitelně, krok za krokem a bez zbytečné teorie navíc.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#zaklady">Pustit se do učiva <span aria-hidden="true">↗</span></a>
+            <a class="button button-quiet" href="#cviceni"><span class="play-icon" aria-hidden="true">▶</span> Rovnou procvičovat</a>
+          </div>
+          <div class="hero-meta"><span class="avatar-stack" aria-hidden="true"><i>01</i><i>02</i><i>03</i></span><span>Učivo, příklady i test na jednom místě</span></div>
+        </div>
+        <div class="hero-art" aria-label="Ukázka algoritmu jako propojených kroků">
+          <div class="art-glow"></div>
+          <div class="code-window">
+            <div class="window-top"><div class="window-dots"><i></i><i></i><i></i></div><span>algoritmus.pseudokód</span><span class="window-live">● ŽIVĚ</span></div>
+            <div class="code-body">
+              <div><span class="line-no">01</span><span class="code-keyword">ZAČÁTEK</span></div>
+              <div><span class="line-no">02</span><span class="code-muted">  načti</span> <span class="code-variable">číslo</span></div>
+              <div><span class="line-no">03</span><span class="code-keyword">  POKUD</span> <span class="code-variable">číslo</span> <span class="code-operator">&gt;=</span> <span class="code-number">0</span></div>
+              <div><span class="line-no">04</span><span class="code-muted">    vypiš</span> <span class="code-string">"nezáporné"</span></div>
+              <div><span class="line-no">05</span><span class="code-keyword">  JINAK</span></div>
+              <div><span class="line-no">06</span><span class="code-muted">    vypiš</span> <span class="code-string">"záporné"</span></div>
+              <div><span class="line-no">07</span><span class="code-keyword">  KONEC POKUD</span></div>
+              <div><span class="line-no">08</span><span class="code-keyword">KONEC</span></div>
+            </div>
+            <div class="code-footer"><span><span class="footer-check">✓</span> Jednoznačný postup</span><span>8 kroků</span></div>
+          </div>
+          <div class="floating-note note-top"><span class="note-icon">↗</span><span><strong>Vstup</strong><small>číslo</small></span></div>
+          <div class="floating-note note-bottom"><span class="note-icon note-icon-green">✓</span><span><strong>Výsledek</strong><small>vždy správný směr</small></span></div>
+          <span class="art-coordinate coordinate-one">50° 05′ 12″ N</span>
+          <span class="art-coordinate coordinate-two">ALGORITMUS / 001</span>
+        </div>
+        <div class="hero-bottom">
+          <span><span class="scroll-line"></span> SROZUMITELNĚ OD ZÁKLADŮ</span>
+          <span>01 — 06 <span class="hero-bottom-muted">/ UČEBNÍ CELKY</span></span>
+        </div>
+      </section>
+
+      <section class="learning-strip" aria-label="Co se naučíš">
+        <div class="strip-inner">
+          <span class="strip-label">CO SE NAUČÍŠ</span>
+          <span>Algoritmy <b>✳</b></span><span>Vývojové diagramy <b>✳</b></span><span>Logické podmínky <b>✳</b></span><span>Správný zápis <b>✳</b></span><span>Test nanečisto</span>
+        </div>
+      </section>
+
+      <section class="content-section section-wrap" id="zaklady">
+        <div class="section-heading">
+          <div><div class="eyebrow"><span class="section-index">01</span> ZAČÍNÁME OD ZAČÁTKU</div><h2>Nejdřív myšlenka.<br /><span class="muted-heading">Pak teprve kód.</span></h2></div>
+          <p class="section-intro">Programování není jen psaní příkazů. Než vznikne program, potřebujeme si promyslet přesný postup, který spolehlivě dojde k cíli.</p>
+        </div>
+        <div class="process-cards">
+          <article class="process-card"><span class="process-number">KROK 01</span><div class="process-icon idea-icon" aria-hidden="true">✳</div><h3>Vymyslet řešení</h3><p>Navrhneme přesný postup, jak úlohu vyřešit. Řešení si rozložíme na jednotlivé srozumitelné kroky.</p><span class="process-arrow">Nezávisle na jazyce <span>↗</span></span></article>
+          <div class="process-connector" aria-hidden="true">→</div>
+          <article class="process-card process-card-accent"><span class="process-number">KROK 02</span><div class="process-icon code-icon" aria-hidden="true">&lt;/&gt;</div><h3>Přepsat do kódu</h3><p>Hotový algoritmus zapíšeme v konkrétním programovacím jazyce. Překladač pak program převede do strojového kódu.</p><span class="process-arrow">Například v Pythonu <span>↗</span></span></article>
+        </div>
+
+        <div class="subsection-title"><span class="mini-mark">✳</span><div><h3>Šest vlastností správného algoritmu</h3><p>Každý kvalitní algoritmus by měl splňovat všechny následující body.</p></div></div>
+        <div class="properties-grid">
+          <article class="property-card"><div class="property-top"><span class="property-glyph">∞</span><span class="property-count">01 / 06</span></div><h4>Konečnost</h4><p>Algoritmus po konečném počtu kroků skončí.</p><span class="example-tag">PŘÍKLAD</span><p class="property-example">Počítání od 1 do 10 má jasný konec.</p></article>
+          <article class="property-card"><div class="property-top"><span class="property-glyph">✓</span><span class="property-count">02 / 06</span></div><h4>Věcná správnost</h4><p>Řeší zadanou úlohu a vrací správné výsledky.</p><span class="example-tag">PŘÍKLAD</span><p class="property-example">Součet čísel 2 a 3 je opravdu 5.</p></article>
+          <article class="property-card"><div class="property-top"><span class="property-glyph">≡</span><span class="property-count">03 / 06</span></div><h4>Jednoznačnost</h4><p>Každý krok lze pochopit jen jedním způsobem.</p><span class="example-tag">PŘÍKLAD</span><p class="property-example">„Přičti 1“ je jasnější než „něco uprav“.</p></article>
+          <article class="property-card"><div class="property-top"><span class="property-glyph">↗</span><span class="property-count">04 / 06</span></div><h4>Obecnost</h4><p>Řeší celou skupinu podobných úloh, ne jen jeden případ.</p><span class="example-tag">PŘÍKLAD</span><p class="property-example">Součet vypočítá pro libovolná dvě čísla.</p></article>
+          <article class="property-card"><div class="property-top"><span class="property-glyph">↻</span><span class="property-count">05 / 06</span></div><h4>Opakovatelnost</h4><p>Stejný vstup při stejných podmínkách dá stejný výsledek. Této vlastnosti říkáme determinismus.</p><span class="example-tag">PŘÍKLAD</span><p class="property-example">Pro vstup 4 algoritmus vždy vrátí stejný výsledek.</p></article>
+          <article class="property-card"><div class="property-top"><span class="property-glyph">Aa</span><span class="property-count">06 / 06</span></div><h4>Srozumitelnost</h4><p>Postup i jeho zápis jsou čitelné pro člověka.</p><span class="example-tag">PŘÍKLAD</span><p class="property-example">Jednoduché pojmenování proměnných usnadní orientaci.</p></article>
+        </div>
+
+        <div class="math-panel">
+          <div class="math-copy"><div class="eyebrow">SPRÁVNÝ ZÁPIS VÝRAZŮ</div><h3>Na závorkách<br />opravdu záleží.</h3><p>Počítač potřebuje vědět, co přesně dělit nebo odmocnit. Závorky odstraňují nejasnosti a zachovávají význam matematického zápisu.</p><div class="math-checks"><p><span>✓</span> Zlomek piš pomocí lomítka a závorek.</p><p><span>✓</span> Argument funkce vždy uzavři do závorek.</p></div></div>
+          <div class="math-examples">
+            <div class="formula-card"><span class="formula-label">ZLOMEK — SPRÁVNĚ</span><code>X := (A+B) / (C+D)</code><div class="formula-caption">Čitatel i jmenovatel jsou celé výrazy.</div></div>
+            <div class="formula-card"><span class="formula-label">ODMOCNINA</span><code>X := SQRT(A+B)</code><div class="formula-caption">SQRT() odmocní celý výraz v závorkách.</div></div>
+            <div class="formula-card formula-note"><span class="formula-label">NEZAPOMEŇ OŠETŘIT</span><p><strong>Dělení nulou:</strong> jmenovatel nesmí být 0.<br /><strong>Odmocnina:</strong> v oboru reálných čísel musí být výraz pod odmocninou ≥ 0.</p></div>
+            <div class="formula-card formula-note"><span class="formula-label">GONIOMETRICKÉ FUNKCE</span><p>Argument zapisuj v závorkách: <code>SIN(α)</code>, <code>COS(α)</code>. Zápis <code>SIN α</code> může být nejednoznačný.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="alternate-section" id="zapisy">
+        <div class="section-wrap content-section">
+          <div class="section-heading">
+            <div><div class="eyebrow"><span class="section-index">02</span> JAK ZAPSAT POSTUP</div><h2>Jeden algoritmus.<br /><span class="muted-heading">Pět způsobů zápisu.</span></h2></div>
+            <p class="section-intro">Záleží na tom, komu algoritmus vysvětlujeme a k čemu bude sloužit. Každý zápis má své místo.</p>
+          </div>
+          <div class="notation-list">
+            <article class="notation-row"><span class="notation-number">01</span><div class="notation-symbol">Aa</div><div class="notation-main"><h3>Slovní vyjádření</h3><p>Popis postupu běžným jazykem. Hodí se pro první vysvětlení i pro jednoduché úlohy.</p><div class="notation-example"><span>PŘÍKLAD</span> Načti číslo. Jestli je větší nebo rovno nule, vypiš „nezáporné“, jinak vypiš „záporné“.</div></div><div class="pros-cons"><p><span class="pros">+</span> Snadné na pochopení, není potřeba znát programovací jazyk.</p><p><span class="cons">−</span> Může být nepřesné a u složitějšího postupu nepřehledné.</p></div></article>
+            <article class="notation-row"><span class="notation-number">02</span><div class="notation-symbol notation-math">∑</div><div class="notation-main"><h3>Matematický zápis</h3><p>Využívá vzorce a matematické značky. Praktický pro výpočty a úlohy se známým řešením.</p><div class="notation-example"><span>PŘÍKLAD</span> x = (a + b) / (c + d), kde c + d ≠ 0.</div></div><div class="pros-cons"><p><span class="pros">+</span> Stručný, přesný a dobře se hodí pro výpočty.</p><p><span class="cons">−</span> Nevyjadřuje sám o sobě podrobný průběh ani složitější rozhodování.</p></div></article>
+            <article class="notation-row"><span class="notation-number">03</span><div class="notation-symbol notation-table-symbol">▤</div><div class="notation-main"><h3>Rozhodovací tabulky</h3><p>Přehledně zobrazují, jaké akce vyplývají z různých kombinací podmínek.</p><div class="notation-example"><span>PŘÍKLAD</span> Podmínka x ≥ 0? &nbsp; ANO → „nezáporné“ &nbsp; NE → „záporné“.</div></div><div class="pros-cons"><p><span class="pros">+</span> Výborně shrnou mnoho přehledných kombinací podmínek.</p><p><span class="cons">−</span> Při velkém počtu kombinací rychle rostou a hůře se čtou.</p></div></article>
+            <article class="notation-row"><span class="notation-number">04</span><div class="notation-symbol notation-flow-symbol">◇</div><div class="notation-main"><h3>Vývojové diagramy</h3><p>Graficky znázorňují kroky, rozhodnutí a směr toku algoritmu.</p><div class="notation-example"><span>PŘÍKLAD</span> ZAČÁTEK → načti x → x ≥ 0? → vypiš výsledek → KONEC.</div></div><div class="pros-cons"><p><span class="pros">+</span> Přirozeně ukazují, co se stane v každé větvi postupu.</p><p><span class="cons">−</span> Složité algoritmy vytvářejí velké a nepřehledné diagramy.</p></div></article>
+            <article class="notation-row"><span class="notation-number">05</span><div class="notation-symbol notation-code-symbol">&lt;/&gt;</div><div class="notation-main"><h3>Počítačový program</h3><p>Zápis algoritmu ve formálním programovacím jazyce, který může počítač vykonat.</p><div class="notation-example code-notation-example"><span>PŘÍKLAD</span><code>if x &gt;= 0: print("nezáporné")</code></div></div><div class="pros-cons"><p><span class="pros">+</span> Lze jej spustit, ověřit a použít na skutečné vstupy.</p><p><span class="cons">−</span> Vyžaduje znalost jazyka a pečlivou kontrolu syntaxe.</p></div></article>
+          </div>
+          <div class="table-wrap">
+            <table class="comparison-table">
+              <caption>Srovnání způsobů zápisu algoritmů</caption>
+              <thead><tr><th>Způsob zápisu</th><th>Srozumitelnost</th><th>Přesnost</th><th>Spustitelný</th><th>Nejlépe se hodí</th></tr></thead>
+              <tbody>
+                <tr><th>Slovní</th><td><span class="rating rating-high">Vysoká</span></td><td><span class="rating rating-low">Nižší</span></td><td>Ne</td><td>První vysvětlení</td></tr>
+                <tr><th>Matematický</th><td><span class="rating rating-mid">Střední</span></td><td><span class="rating rating-high">Vysoká</span></td><td>Ne</td><td>Výpočty a vzorce</td></tr>
+                <tr><th>Rozhodovací tabulka</th><td><span class="rating rating-high">Vysoká</span></td><td><span class="rating rating-mid">Střední</span></td><td>Ne</td><td>Kombinace podmínek</td></tr>
+                <tr><th>Vývojový diagram</th><td><span class="rating rating-high">Vysoká</span></td><td><span class="rating rating-high">Vysoká</span></td><td>Ne</td><td>Tok a větvení</td></tr>
+                <tr><th>Program</th><td><span class="rating rating-mid">Střední</span></td><td><span class="rating rating-high">Vysoká</span></td><td>Ano</td><td>Řešení v počítači</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section section-wrap" id="diagramy">
+        <div class="section-heading">
+          <div><div class="eyebrow"><span class="section-index">03</span> ČTI TOK, NEJEN ZNAČKY</div><h2>Vývojové diagramy<br /><span class="muted-heading">bez hádání.</span></h2></div>
+          <p class="section-intro">Každý tvar má svůj význam. Když je znáš, dokážeš diagram rychle přečíst a sám navrhnout přehledný postup.</p>
+        </div>
+        <div class="flow-symbols">
+          <article class="symbol-card"><div class="symbol-visual"><svg viewBox="0 0 150 76" aria-hidden="true"><ellipse cx="75" cy="38" rx="46" ry="23"></ellipse><text x="75" y="42" text-anchor="middle">START</text></svg></div><h3>Mezní značka <span class="symbol-shape">OVÁL</span></h3><p>Označuje začátek nebo konec algoritmu.</p><span class="symbol-use">ZAČÁTEK · KONEC</span></article>
+          <article class="symbol-card"><div class="symbol-visual"><svg viewBox="0 0 150 76" aria-hidden="true"><polygon points="43,17 118,17 107,59 32,59"></polygon><text x="75" y="42" text-anchor="middle">Načti x</text></svg></div><h3>Vstup / výstup <span class="symbol-shape">KOSODÉLNÍK</span></h3><p>Načte vstupní data nebo zobrazí výsledek.</p><span class="symbol-use">NAČTI · VYPIŠ</span></article>
+          <article class="symbol-card"><div class="symbol-visual"><svg viewBox="0 0 150 76" aria-hidden="true"><rect x="34" y="17" width="82" height="42" rx="2"></rect><text x="75" y="42" text-anchor="middle">x := x + 1</text></svg></div><h3>Zpracování <span class="symbol-shape">OBDÉLNÍK</span></h3><p>Provede výpočet nebo jinou operaci.</p><span class="symbol-use">PŘIŘAĎ · SPOČÍTEJ</span></article>
+          <article class="symbol-card"><div class="symbol-visual"><svg viewBox="0 0 150 76" aria-hidden="true"><polygon points="75,12 119,38 75,64 31,38"></polygon><text x="75" y="42" text-anchor="middle">x ≥ 0?</text></svg></div><h3>Rozhodovací blok <span class="symbol-shape">KOSOČTVEREC</span></h3><p>Vyhodnotí podmínku a rozdělí tok na větve.</p><span class="symbol-use">ANO / NE</span></article>
+          <article class="symbol-card"><div class="symbol-visual"><svg viewBox="0 0 150 76" aria-hidden="true"><polygon points="51,16 110,16 126,38 110,60 51,60 35,38"></polygon><text x="81" y="42" text-anchor="middle">i := 1</text></svg></div><h3>Příprava <span class="symbol-shape">ŠESTIÚHELNÍK</span></h3><p>Připraví hodnoty, často před začátkem cyklu.</p><span class="symbol-use">NASTAV i := 1</span></article>
+          <article class="symbol-card"><div class="symbol-visual"><svg viewBox="0 0 150 76" aria-hidden="true"><circle cx="75" cy="38" r="22"></circle><text x="75" y="43" text-anchor="middle">1</text></svg></div><h3>Spojka <span class="symbol-shape">KOLEČKO</span></h3><p>Propojí části diagramu bez dlouhých křížících se šipek.</p><span class="symbol-use">OZNAČENÍ ČÍSLEM</span></article>
+          <article class="symbol-card"><div class="symbol-visual"><svg viewBox="0 0 150 76" aria-hidden="true"><rect x="32" y="17" width="86" height="42" rx="2"></rect><path d="M42 17v42M108 17v42"></path><text x="75" y="42" text-anchor="middle">Seřaď()</text></svg></div><h3>Podprogram <span class="symbol-shape">DVOJITÝ OBDÉLNÍK</span></h3><p>Odkazuje na samostatně popsaný podprogram.</p><span class="symbol-use">ZAVOLEJ PODPROGRAM</span></article>
+        </div>
+
+        <div class="flowchart-panel">
+          <div class="flowchart-heading"><div><div class="eyebrow">UKÁZKOVÝ ALGORITMUS</div><h3>Je číslo kladné,<br />nebo záporné?</h3></div><span class="diagram-badge"><span></span> VÝVOJOVÝ DIAGRAM</span></div>
+          <div class="diagram-scroll" role="img" aria-label="Vývojový diagram: začátek, načtení čísla x, rozhodnutí zda x je větší nebo rovno nule, výpis nezáporné nebo záporné hodnoty, konec">
+            <svg class="flow-diagram" viewBox="0 0 640 670" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3 z" fill="#728077"/></marker></defs>
+              <g class="diagram-lines" fill="none" stroke="#728077" stroke-width="2" marker-end="url(#arrow)">
+                <path d="M320 72v32"/><path d="M320 155v36"/><path d="M276 235H166v47"/><path d="M364 235h110v47"/><path d="M166 347v62h154"/><path d="M474 347v62H320"/><path d="M320 453v38"/>
+              </g>
+              <g class="diagram-text diagram-branch"><text x="196" y="226">ANO</text><text x="420" y="226">NE</text></g>
+              <g class="diagram-shape terminal-shape"><ellipse cx="320" cy="48" rx="75" ry="25"/><text x="320" y="53" text-anchor="middle">ZAČÁTEK</text></g>
+              <g class="diagram-shape io-shape"><polygon points="260,104 395,104 380,155 245,155"/><text x="320" y="134" text-anchor="middle">Načti číslo x</text></g>
+              <g class="diagram-shape decision-shape"><polygon points="320,191 364,235 320,279 276,235"/><text x="320" y="240" text-anchor="middle">x ≥ 0?</text></g>
+              <g class="diagram-shape io-shape"><polygon points="108,282 218,282 207,347 97,347"/><text x="158" y="320" text-anchor="middle">Vypiš „nezáporné“</text></g>
+              <g class="diagram-shape io-shape"><polygon points="416,282 526,282 515,347 405,347"/><text x="466" y="320" text-anchor="middle">Vypiš „záporné“</text></g>
+              <g class="diagram-lines merge-line" fill="none" stroke="#728077" stroke-width="2"><path d="M320 409v35"/></g>
+              <g class="diagram-shape terminal-shape"><ellipse cx="320" cy="520" rx="75" ry="25"/><text x="320" y="525" text-anchor="middle">KONEC</text></g>
+              <g class="diagram-lines" fill="none" stroke="#728077" stroke-width="2" marker-end="url(#arrow)"><path d="M320 491v4"/></g>
+            </svg>
+          </div>
+          <div class="flowchart-steps">
+            <div><span>01</span><p>Začneme na mezní značce <strong>ZAČÁTEK</strong>.</p></div>
+            <div><span>02</span><p>Načteme číslo <strong>x</strong> do kosodélníku.</p></div>
+            <div><span>03</span><p>Kosočtverec ověří podmínku <strong>x ≥ 0</strong>.</p></div>
+            <div><span>04</span><p><strong>ANO</strong> vypíše „nezáporné“, <strong>NE</strong> vypíše „záporné“.</p></div>
+            <div><span>05</span><p>Obě větve se spojí a algoritmus skončí.</p></div>
+          </div>
+        </div>
+        <div class="logic-panel"><div class="logic-icon" aria-hidden="true">∧<br />∨</div><div><div class="eyebrow">LOGICKÉ SPOJKY</div><h3>AND zužuje. OR rozšiřuje.</h3><p><strong>AND (A ZÁROVEŇ):</strong> výsledek je pravdivý, jen když jsou pravdivé obě podmínky. &nbsp; <strong>OR (NEBO):</strong> výsledek je pravdivý, když platí alespoň jedna z podmínek.</p></div><div class="logic-examples"><code>x &gt; 0 AND x &lt; 10</code><span>kladné číslo menší než 10</span><code>x &lt; 0 OR x &gt; 10</code><span>záporné číslo nebo větší než 10</span></div></div>
+      </section>
+
+      <section class="practice-section" id="cviceni">
+        <div class="section-wrap content-section">
+          <div class="section-heading">
+            <div><div class="eyebrow"><span class="section-index">04</span> TEĎ JSI NA ŘADĚ</div><h2>Zkus si to.<br /><span class="muted-heading">Chyba je součást učení.</span></h2></div>
+            <p class="section-intro">Vyber odpověď, rozhodni, jestli je tvrzení pravdivé, nebo doplň pojem. Hned se dozvíš, jak na tom jsi.</p>
+          </div>
+          <div class="practice-card">
+            <div class="practice-top"><div><span class="practice-kicker">RYCHLÉ PROCVIČOVÁNÍ</span><h3 id="practice-type">Výběr odpovědi</h3></div><span class="practice-progress"><span id="practice-current">01</span> <i>/</i> <span id="practice-total">06</span></span></div>
+            <div class="progress-track"><span id="practice-progress-bar"></span></div>
+            <div id="practice-question" class="practice-question" aria-live="polite"></div>
+            <div id="practice-feedback" class="feedback" aria-live="polite" hidden></div>
+            <div class="practice-controls"><button class="button button-primary" id="practice-submit" type="button" disabled>Zkontrolovat odpověď <span>→</span></button><button class="button button-quiet" id="practice-next" type="button" hidden>Další otázka <span>→</span></button><span class="practice-hint">Odpověz a hned se dozvíš výsledek.</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section section-wrap" id="test">
+        <div class="section-heading">
+          <div><div class="eyebrow"><span class="section-index">05</span> ZKOUŠKA NANEČISTO</div><h2>Jak bys dopadl<br /><span class="muted-heading">u opravdového testu?</span></h2></div>
+          <p class="section-intro">Pět otázek s výběrem a čtyři otevřené. Za každou získáš jeden bod. Otevřené odpovědi vyhodnotíme podle klíčových pojmů.</p>
+        </div>
+        <form class="exam-form" id="exam-form">
+          <div class="exam-toolbar"><span><span class="exam-dot"></span> TEST Z ALGORITMIZACE</span><span>9 OTÁZEK <i>·</i> 9 BODŮ</span></div>
+          <fieldset class="exam-question" data-question="1"><legend><span class="question-number">01</span> Jak se v programu projeví porušení věcné správnosti algoritmu?</legend><label class="exam-option"><input type="radio" name="exam-1" value="a"><span class="option-key">a</span><span>Program se nespustí.</span></label><label class="exam-option"><input type="radio" name="exam-1" value="b"><span class="option-key">b</span><span>Program se zacyklí.</span></label><label class="exam-option"><input type="radio" name="exam-1" value="c"><span class="option-key">c</span><span>Program pracuje, ale poskytuje chybné výsledky.</span></label><label class="exam-option"><input type="radio" name="exam-1" value="d"><span class="option-key">d</span><span>Program skončí ihned po načtení údajů.</span></label></fieldset>
+          <fieldset class="exam-question" data-question="2"><legend><span class="question-number">02</span> Který zápis správně převádí zlomek (A+B)/(C+D)?</legend><label class="exam-option"><input type="radio" name="exam-2" value="a"><span class="option-key">a</span><code>X := A+B / C+D</code></label><label class="exam-option"><input type="radio" name="exam-2" value="b"><span class="option-key">b</span><code>X := (A+B) / (C+D)</code></label><label class="exam-option"><input type="radio" name="exam-2" value="c"><span class="option-key">c</span><code>X := A+B / (C+D)</code></label><label class="exam-option"><input type="radio" name="exam-2" value="d"><span class="option-key">d</span><code>X := (A+B) / C+D</code></label></fieldset>
+          <fieldset class="exam-question" data-question="3"><legend><span class="question-number">03</span> Jak se značí blok pro načtení vstupních dat?</legend><label class="exam-option"><input type="radio" name="exam-3" value="a"><span class="option-key">a</span><span>Obdélník.</span></label><label class="exam-option"><input type="radio" name="exam-3" value="b"><span class="option-key">b</span><span>Kosočtverec.</span></label><label class="exam-option"><input type="radio" name="exam-3" value="c"><span class="option-key">c</span><span>Kosodélník.</span></label><label class="exam-option"><input type="radio" name="exam-3" value="d"><span class="option-key">d</span><span>Ovál.</span></label></fieldset>
+          <fieldset class="exam-question" data-question="4"><legend><span class="question-number">04</span> Která vlastnost algoritmu zaručuje stejný výsledek při stejných vstupních datech?</legend><label class="exam-option"><input type="radio" name="exam-4" value="a"><span class="option-key">a</span><span>Obecnost.</span></label><label class="exam-option"><input type="radio" name="exam-4" value="b"><span class="option-key">b</span><span>Srozumitelnost.</span></label><label class="exam-option"><input type="radio" name="exam-4" value="c"><span class="option-key">c</span><span>Jednoznačnost.</span></label><label class="exam-option"><input type="radio" name="exam-4" value="d"><span class="option-key">d</span><span>Opakovatelnost.</span></label></fieldset>
+          <fieldset class="exam-question" data-question="5"><legend><span class="question-number">05</span> Jaký je hlavní účel překladače?</legend><label class="exam-option"><input type="radio" name="exam-5" value="a"><span class="option-key">a</span><span>Převádí diagram na slovní popis.</span></label><label class="exam-option"><input type="radio" name="exam-5" value="b"><span class="option-key">b</span><span>Překládá program do strojového kódu.</span></label><label class="exam-option"><input type="radio" name="exam-5" value="c"><span class="option-key">c</span><span>Automaticky opravuje logické chyby.</span></label><label class="exam-option"><input type="radio" name="exam-5" value="d"><span class="option-key">d</span><span>Překládá komentáře.</span></label></fieldset>
+          <div class="open-questions-heading"><span class="eyebrow">DRUHÁ ČÁST / OTEVŘENÉ ODPOVĚDI</span><p>Odpověz vlastními slovy. Za každou otázku můžeš získat jeden bod.</p></div>
+          <div class="open-question"><label for="open-1"><span class="question-number">06</span> Vyjmenuj šest vlastností správného algoritmu.</label><textarea id="open-1" name="open-1" rows="2" placeholder="Napiš jednotlivé vlastnosti oddělené čárkou…"></textarea></div>
+          <div class="open-question"><label for="open-2"><span class="question-number">07</span> Jaké dvě hlavní podmínky řešitelnosti je potřeba ošetřit?</label><textarea id="open-2" name="open-2" rows="2" placeholder="Napiš obě podmínky…"></textarea></div>
+          <div class="open-question"><label for="open-3"><span class="question-number">08</span> Vysvětli rozdíl mezi AND a OR.</label><textarea id="open-3" name="open-3" rows="2" placeholder="Popiš, kdy je který logický výraz pravdivý…"></textarea></div>
+          <div class="open-question"><label for="open-4"><span class="question-number">09</span> K čemu slouží spojka ve vývojovém diagramu?</label><textarea id="open-4" name="open-4" rows="2" placeholder="Stručně vysvětli její účel…"></textarea></div>
+          <div class="exam-submit-row"><button type="submit" class="button button-primary">Vyhodnotit test <span>→</span></button><button type="reset" class="button button-quiet" id="exam-reset">Vymazat odpovědi</button><span>Výsledek se zobrazí hned po odeslání.</span></div>
+          <div id="exam-result" class="exam-result" aria-live="polite" hidden></div>
+        </form>
+      </section>
+
+      <section class="summary-section" id="opakování">
+        <div class="section-wrap content-section">
+          <div class="section-heading">
+            <div><div class="eyebrow"><span class="section-index">06</span> TAHÁK PŘED TESTEM</div><h2>Vše důležité<br /><span class="muted-heading">na jednom místě.</span></h2></div>
+            <p class="section-intro">Krátké opakování, ke kterému se můžeš vrátit těsně před písemkou.</p>
+          </div>
+          <div class="summary-grid">
+            <article class="summary-card summary-card-wide"><span class="summary-number">01 / PODSTATA</span><h3>Co je algoritmus?</h3><p>Přesný, konečný a srozumitelný postup kroků, který řeší danou úlohu.</p></article>
+            <article class="summary-card"><span class="summary-number">02 / VLASTNOSTI</span><h3>Šest podmínek kvality</h3><p>Konečnost · věcná správnost · jednoznačnost · obecnost · opakovatelnost (determinismus) · srozumitelnost.</p></article>
+            <article class="summary-card"><span class="summary-number">03 / ZÁPIS</span><h3>Pět podob algoritmu</h3><p>Slovní popis · matematický zápis · rozhodovací tabulky · vývojové diagramy · počítačový program.</p></article>
+            <article class="summary-card"><span class="summary-number">04 / ZNAČKY</span><h3>Sedm značek diagramu</h3><p>Ovál: začátek / konec. Kosodélník: vstup / výstup. Obdélník: zpracování. Kosočtverec: rozhodnutí. Šestiúhelník: příprava. Kolečko: spojka. Dvojitý obdélník: podprogram.</p></article>
+            <article class="summary-card"><span class="summary-number">05 / LOGIKA</span><h3>AND nebo OR?</h3><p><strong>AND:</strong> musí platit všechny podmínky. <strong>OR:</strong> stačí, když platí alespoň jedna.</p></article>
+            <article class="summary-card"><span class="summary-number">06 / OŠETŘENÍ</span><h3>Podmínky řešitelnosti</h3><p>Nulový jmenovatel u zlomku a záporný výraz pod odmocninou v oboru reálných čísel.</p></article>
+            <article class="summary-card summary-card-wide"><span class="summary-number">07 / MATEMATICKÝ ZÁPIS</span><h3>Závorky chrání význam</h3><p>Zlomek piš <code>(A+B) / (C+D)</code>. Odmocninu <code>SQRT(výraz)</code>. Argumenty funkcí včetně goniometrických vždy uzavírej do závorek.</p></article>
+          </div>
+          <div class="last-note"><span class="last-note-icon">✳</span><p>Dobře navržený algoritmus je srozumitelný dřív, než se z něj stane program.</p><a href="#nahoru" class="text-link">Zpátky na začátek ↑</a></div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer"><a class="brand" href="#uvod"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span>algoritmus<span class="brand-dot">.</span></span></a><p>Algoritmizace, které konečně rozumíš.</p><a href="#nahoru">Zpět nahoru ↑</a><span>© 2026 · UČIVO PŘEHLEDNĚ</span></footer>
+    <button class="back-to-top" type="button" aria-label="Zpět nahoru" title="Zpět nahoru">↑</button>
+  </body>
+</html>
